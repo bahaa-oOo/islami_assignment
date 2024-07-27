@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/ui/screens/home/tabs/ahadeth/ahadeth_details.dart';
 import 'package:islami/ui/screens/home/tabs/ahadeth/item_ahadeth_name.dart';
-
-import '../../../../../model/hadeth.dart';
-import '../../../../../model/sura_details_arguments.dart';
 import '../../../../utils/app_assets.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_styles.dart';
-import '../../../../utils/constant.dart';
-import '../../../sura_details/sura_details.dart';
+
 
 class Ahadeth extends StatefulWidget {
 

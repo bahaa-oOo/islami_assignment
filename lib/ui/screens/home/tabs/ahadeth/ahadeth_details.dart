@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/model/sura_details_arguments.dart';
-import 'package:islami/ui/screens/home/tabs/ahadeth/item_ahadeth_name.dart';
 import 'package:islami/ui/screens/home/tabs/ahadeth/item_hadeth_details.dart';
-import 'package:islami/ui/utils/app_colors.dart';
 import 'package:islami/ui/widgets/app_Scaffold.dart';
-
-import '../../../../../model/hadeth.dart';
 import '../../../../utils/app_styles.dart';
 import 'ahadeth_tap.dart';
 
