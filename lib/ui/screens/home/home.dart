@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/screens/home/tabs/ahadeth/ahadeth.dart';
+import 'package:islami/ui/screens/home/tabs/ahadeth/ahadeth_tap.dart';
 import 'package:islami/ui/screens/home/tabs/quran/quran.dart';
 import 'package:islami/ui/screens/home/tabs/radio/radio.dart';
 import 'package:islami/ui/screens/home/tabs/sebha/sebha.dart';
 import 'package:islami/ui/utils/app_colors.dart';
 import 'package:islami/ui/utils/app_styles.dart';
+import 'package:islami/ui/widgets/app_Scaffold.dart';
 
 import '../../utils/app_assets.dart';
 class Home extends StatefulWidget {
@@ -21,22 +22,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(AppAssets.background))
-      ),
-      child: Scaffold(
-        appBar: buildAppBar(),
-        backgroundColor: AppColors.transparent,
-        bottomNavigationBar: buildBottomNavigation(),
-        body: tabs[selectedTapIndex],
-      ),
-
-    );
-  }
-
-  Theme buildBottomNavigation() {
-    return Theme(
+    return AppScaffold(
+      appBarTitle: "Islami",
+      body: tabs[selectedTapIndex],
+      bottomNavigationBar: Theme(
         data: ThemeData(canvasColor: AppColors.primary),
         child: BottomNavigationBar(
           currentIndex: selectedTapIndex,
@@ -56,11 +45,30 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppAssets.icSebha)),label: "Sebha")
           ],
         ),
-      );
+      ),
+    );
   }
 
-}
 
+
+}
+/*
+Container(
+decoration: BoxDecoration(
+image: DecorationImage(image: AssetImage(AppAssets.background))
+),
+child: Scaffold(
+appBar: buildAppBar(),
+backgroundColor: AppColors.transparent,
+bottomNavigationBar: buildBottomNavigation(),
+body: tabs[selectedTapIndex],
+),
+
+ */
+/*
+Theme buildBottomNavigation() {
+  return
+}
 
 AppBar buildAppBar() =>  AppBar(
   title: Text("Islami",style: AppStyle.appBarTextStyle,),
@@ -70,3 +78,4 @@ AppBar buildAppBar() =>  AppBar(
 
 );
 
+*/

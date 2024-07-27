@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami/model/sura_details_arguments.dart';
+import 'package:islami/ui/screens/sura_details/sura_details.dart';
 import 'package:islami/ui/utils/app_colors.dart';
 import 'package:islami/ui/utils/app_styles.dart';
 import 'package:islami/ui/utils/constant.dart';
@@ -27,8 +29,8 @@ class Quran extends StatelessWidget {
                 Row(
 
                   children: [
-                    Expanded(child: Text("Sura Name",style:AppStyle.Titles,textAlign: TextAlign.center,)),
-                    Expanded(child: Text("Verses",style:AppStyle.Titles,textAlign: TextAlign.center,))
+                    Expanded(child: Text("Sura Name",style:AppStyle.titles,textAlign: TextAlign.center,)),
+                    Expanded(child: Text("Verses",style:AppStyle.titles,textAlign: TextAlign.center,))
                   ],
                 ),
                 buildDivider(),
@@ -45,11 +47,16 @@ class Quran extends StatelessWidget {
   Expanded buildSurasList() =>  Expanded(flex: 7,child: ListView.builder(
       itemCount: Constants.suraNames.length ,
       itemBuilder: (context,index){
-        return Row(
-          children: [
-            Expanded(child: Text(Constants.suraNames[index],style:AppStyle.Titles,textAlign: TextAlign.center,)),
-            Expanded(child: Text(Constants.versesNumber[index].toString(),style:AppStyle.Titles,textAlign: TextAlign.center,))
-          ],
+        return InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, SuraDetails.routeName,arguments: SuraDetailsArgs(suraName: Constants.suraNames[index], fileName: "${index+1}.txt"));
+          },
+          child: Row(
+            children: [
+              Expanded(child: Text(Constants.suraNames[index],style:AppStyle.titles,textAlign: TextAlign.center,)),
+              Expanded(child: Text(Constants.versesNumber[index].toString(),style:AppStyle.titles,textAlign: TextAlign.center,))
+            ],
+          ),
         );
 
       }),);

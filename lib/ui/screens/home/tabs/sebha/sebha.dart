@@ -50,7 +50,7 @@ class _SebhaState extends State<Sebha> {
           child: Text(
             "عدد التسبيحات",
             textAlign: TextAlign.center,
-            style: AppStyle.Titless,
+            style: AppStyle.titless,
           ),
         ),
         Padding(
@@ -64,7 +64,7 @@ class _SebhaState extends State<Sebha> {
               ),
               child: Text(
                 "$counter",
-                style: AppStyle.Titless,
+                style: AppStyle.titless,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class _SebhaState extends State<Sebha> {
               ),
               child: Text(
                 "${Azkar[index]}",
-                style: AppStyle.Titless,
+                style: AppStyle.titless,
               ),
             ),
           ),
